@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ACGServices_Redirect", "ACGServices_Redirect\ACGServices_Redirect.vbproj", "{543CCDCA-07F5-45B4-9BF3-88E4740B1601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{543CCDCA-07F5-45B4-9BF3-88E4740B1601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543CCDCA-07F5-45B4-9BF3-88E4740B1601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543CCDCA-07F5-45B4-9BF3-88E4740B1601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543CCDCA-07F5-45B4-9BF3-88E4740B1601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B40F0B97-F455-4806-9261-D07DD492B58E}
+	EndGlobalSection
+EndGlobal

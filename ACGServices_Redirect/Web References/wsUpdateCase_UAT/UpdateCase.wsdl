@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.accidentcreditgroup.co.uk" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.accidentcreditgroup.co.uk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Welcome to the Accident Credit Group 'Update Case' Web Service.&lt;br /&gt;&lt;br /&gt;If you have any questions please contact Ed Sansbury.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.accidentcreditgroup.co.uk">
+      <s:element name="ACGUpdateCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaseData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACGUpdateCaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACGUpdateCaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ACGUpdateCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ACGUpdateCase" />
+  </wsdl:message>
+  <wsdl:message name="ACGUpdateCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ACGUpdateCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACGUpdateCaseHttpGetIn">
+    <wsdl:part name="CaseData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACGUpdateCaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ACGUpdateCaseHttpPostIn">
+    <wsdl:part name="CaseData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACGUpdateCaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="UpdateCaseSoap">
+    <wsdl:operation name="ACGUpdateCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Click the link above to see the Web Service</wsdl:documentation>
+      <wsdl:input message="tns:ACGUpdateCaseSoapIn" />
+      <wsdl:output message="tns:ACGUpdateCaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UpdateCaseHttpGet">
+    <wsdl:operation name="ACGUpdateCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Click the link above to see the Web Service</wsdl:documentation>
+      <wsdl:input message="tns:ACGUpdateCaseHttpGetIn" />
+      <wsdl:output message="tns:ACGUpdateCaseHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UpdateCaseHttpPost">
+    <wsdl:operation name="ACGUpdateCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Click the link above to see the Web Service</wsdl:documentation>
+      <wsdl:input message="tns:ACGUpdateCaseHttpPostIn" />
+      <wsdl:output message="tns:ACGUpdateCaseHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UpdateCaseSoap" type="tns:UpdateCaseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACGUpdateCase">
+      <soap:operation soapAction="http://www.accidentcreditgroup.co.uk/ACGUpdateCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UpdateCaseSoap12" type="tns:UpdateCaseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACGUpdateCase">
+      <soap12:operation soapAction="http://www.accidentcreditgroup.co.uk/ACGUpdateCase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UpdateCaseHttpGet" type="tns:UpdateCaseHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ACGUpdateCase">
+      <http:operation location="/ACGUpdateCase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UpdateCaseHttpPost" type="tns:UpdateCaseHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ACGUpdateCase">
+      <http:operation location="/ACGUpdateCase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UpdateCase">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Welcome to the Accident Credit Group 'Update Case' Web Service.&lt;br /&gt;&lt;br /&gt;If you have any questions please contact Ed Sansbury.</wsdl:documentation>
+    <wsdl:port name="UpdateCaseSoap" binding="tns:UpdateCaseSoap">
+      <soap:address location="https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UpdateCaseSoap12" binding="tns:UpdateCaseSoap12">
+      <soap12:address location="https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UpdateCaseHttpGet" binding="tns:UpdateCaseHttpGet">
+      <http:address location="https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UpdateCaseHttpPost" binding="tns:UpdateCaseHttpPost">
+      <http:address location="https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

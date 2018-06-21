@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.accidentcreditgroup.co.uk" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.accidentcreditgroup.co.uk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Welcome to the Accident Credit Group 'Add Extended Case' Web Service.&lt;br /&gt;&lt;br /&gt;If you have any questions please contact Ed Sansbury.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.accidentcreditgroup.co.uk">
+      <s:element name="ACGAddExtendedCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaseData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACGAddExtendedCaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACGAddExtendedCaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ACGAddExtendedCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:ACGAddExtendedCase" />
+  </wsdl:message>
+  <wsdl:message name="ACGAddExtendedCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ACGAddExtendedCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACGAddExtendedCaseHttpGetIn">
+    <wsdl:part name="CaseData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACGAddExtendedCaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ACGAddExtendedCaseHttpPostIn">
+    <wsdl:part name="CaseData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACGAddExtendedCaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="AddExtendedCaseSoap">
+    <wsdl:operation name="ACGAddExtendedCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Click the link above to see the Web Service</wsdl:documentation>
+      <wsdl:input message="tns:ACGAddExtendedCaseSoapIn" />
+      <wsdl:output message="tns:ACGAddExtendedCaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AddExtendedCaseHttpGet">
+    <wsdl:operation name="ACGAddExtendedCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Click the link above to see the Web Service</wsdl:documentation>
+      <wsdl:input message="tns:ACGAddExtendedCaseHttpGetIn" />
+      <wsdl:output message="tns:ACGAddExtendedCaseHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AddExtendedCaseHttpPost">
+    <wsdl:operation name="ACGAddExtendedCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Click the link above to see the Web Service</wsdl:documentation>
+      <wsdl:input message="tns:ACGAddExtendedCaseHttpPostIn" />
+      <wsdl:output message="tns:ACGAddExtendedCaseHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AddExtendedCaseSoap" type="tns:AddExtendedCaseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACGAddExtendedCase">
+      <soap:operation soapAction="http://www.accidentcreditgroup.co.uk/ACGAddExtendedCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AddExtendedCaseSoap12" type="tns:AddExtendedCaseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACGAddExtendedCase">
+      <soap12:operation soapAction="http://www.accidentcreditgroup.co.uk/ACGAddExtendedCase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AddExtendedCaseHttpGet" type="tns:AddExtendedCaseHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ACGAddExtendedCase">
+      <http:operation location="/ACGAddExtendedCase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AddExtendedCaseHttpPost" type="tns:AddExtendedCaseHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ACGAddExtendedCase">
+      <http:operation location="/ACGAddExtendedCase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddExtendedCase">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Welcome to the Accident Credit Group 'Add Extended Case' Web Service.&lt;br /&gt;&lt;br /&gt;If you have any questions please contact Ed Sansbury.</wsdl:documentation>
+    <wsdl:port name="AddExtendedCaseSoap" binding="tns:AddExtendedCaseSoap">
+      <soap:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/addextendedcase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AddExtendedCaseSoap12" binding="tns:AddExtendedCaseSoap12">
+      <soap12:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/addextendedcase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AddExtendedCaseHttpGet" binding="tns:AddExtendedCaseHttpGet">
+      <http:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/addextendedcase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AddExtendedCaseHttpPost" binding="tns:AddExtendedCaseHttpPost">
+      <http:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/addextendedcase.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.accidentcreditgroup.co.uk" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.accidentcreditgroup.co.uk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Welcome to the Accident Credit Group 'Cases AF' Web Service.&lt;br /&gt;&lt;br /&gt;If you have any questions please contact Ed Sansbury.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.accidentcreditgroup.co.uk">
+      <s:element name="Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caseXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertHttpGetIn">
+    <wsdl:part name="caseXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertHttpPostIn">
+    <wsdl:part name="caseXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="CasesAFSoap">
+    <wsdl:operation name="Insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert an AF Case</wsdl:documentation>
+      <wsdl:input message="tns:InsertSoapIn" />
+      <wsdl:output message="tns:InsertSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CasesAFHttpGet">
+    <wsdl:operation name="Insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert an AF Case</wsdl:documentation>
+      <wsdl:input message="tns:InsertHttpGetIn" />
+      <wsdl:output message="tns:InsertHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CasesAFHttpPost">
+    <wsdl:operation name="Insert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert an AF Case</wsdl:documentation>
+      <wsdl:input message="tns:InsertHttpPostIn" />
+      <wsdl:output message="tns:InsertHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CasesAFSoap" type="tns:CasesAFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://www.accidentcreditgroup.co.uk/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CasesAFSoap12" type="tns:CasesAFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert">
+      <soap12:operation soapAction="http://www.accidentcreditgroup.co.uk/Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CasesAFHttpGet" type="tns:CasesAFHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Insert">
+      <http:operation location="/Insert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CasesAFHttpPost" type="tns:CasesAFHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Insert">
+      <http:operation location="/Insert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CasesAF">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Welcome to the Accident Credit Group 'Cases AF' Web Service.&lt;br /&gt;&lt;br /&gt;If you have any questions please contact Ed Sansbury.</wsdl:documentation>
+    <wsdl:port name="CasesAFSoap" binding="tns:CasesAFSoap">
+      <soap:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/CasesAF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CasesAFSoap12" binding="tns:CasesAFSoap12">
+      <soap12:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/CasesAF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CasesAFHttpGet" binding="tns:CasesAFHttpGet">
+      <http:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/CasesAF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CasesAFHttpPost" binding="tns:CasesAFHttpPost">
+      <http:address location="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/CasesAF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

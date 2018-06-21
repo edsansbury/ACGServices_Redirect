@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ACGServices_Redirect_wsAddExtendedCase_UAT_AddExtendedCase" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ranassl.accidentcreditgroup.co.uk:5151/UATranaaddcase/addextendedcase.asmx</Value>
+    </Setting>
+    <Setting Name="ACGServices_Redirect_wsAddExtendedCase_AddExtendedCase" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/addextendedcase.asmx</Value>
+    </Setting>
+    <Setting Name="ACGServices_Redirect_wsUpdateCase_UpdateCase" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/updatecase.asmx</Value>
+    </Setting>
+    <Setting Name="ACGServices_Redirect_wsUpdateCase_UAT_UpdateCase" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx</Value>
+    </Setting>
+    <Setting Name="ACGServices_Redirect_wsCasesAF_CasesAF" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/CasesAF.asmx</Value>
+    </Setting>
+    <Setting Name="ACGServices_Redirect_wsCasesAF_UAT_CasesAF" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ranassl.accidentcreditgroup.co.uk:5151/UATranaaddcase/CasesAF.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

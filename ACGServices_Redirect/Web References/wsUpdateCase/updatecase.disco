@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/updatecase.asmx?wsdl" docRef="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/updatecase.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/updatecase.asmx" xmlns:q1="http://www.accidentcreditgroup.co.uk" binding="q1:UpdateCaseSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://ranassl.accidentcreditgroup.co.uk:5151/ranaaddcase/updatecase.asmx" xmlns:q2="http://www.accidentcreditgroup.co.uk" binding="q2:UpdateCaseSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

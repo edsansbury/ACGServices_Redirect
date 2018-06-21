@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx?wsdl" filename="UpdateCase.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://ranassl.accidentcreditgroup.co.uk:5151/UATRanaAddCase/UpdateCase.asmx?disco" filename="UpdateCase.disco" />
+  </Results>
+</DiscoveryClientResultsFile>
